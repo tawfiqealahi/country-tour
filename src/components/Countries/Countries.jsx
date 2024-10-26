@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Country from "../Country/Country";
 
 
+
 const Countries = () => {
     const [countries,setCountries]=useState([]);
 useEffect(()=>{
@@ -14,10 +15,12 @@ useEffect(()=>{
     return (
         <div>
         <h3>Total Country: {countries.length}</h3>
-      {  
-        countries.map(country=><Country key={country.cca3}
+     <div className='country-container'
+> {  
+        countries.map(country=><Country  key={country.cca3}
         country={country} ></Country>)
        }
+       </div>
         </div>
     );
 };

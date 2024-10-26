@@ -1,0 +1,21 @@
+.country{
+    border: .3rem solid rgb(9, 79, 90);
+    border-radius: 1rem;
+    margin-bottom: .5rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    -ms-border-radius: 1rem;
+    -o-border-radius: 1rem;
+}
+button{
+    margin: .3rem;
+}
+.button {
+    display: grid;
+    place-items: center;
+    
+}
+.image{
+    display: grid;
+    place-items: center;
+}
