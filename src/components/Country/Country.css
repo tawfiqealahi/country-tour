@@ -19,3 +19,9 @@ button{
     display: grid;
     place-items: center;
 }
+.visited-country{
+    background: #5e8584;
+}
+.non-visited-country{
+    background: #dacece;
+}
