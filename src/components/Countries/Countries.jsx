@@ -16,21 +16,25 @@ useEffect(()=>{
     .then(data=>setCountries(data));
 },[])
 
-const HandleVisitedCountry =(country)=>{
-
+const handleVisitedCountry =country=>{
+        const newVisitedCountries =[...visitedCountries,country];
+        setVisitedCountries(newVisitedCountries);
 }
     return (
         <div>
         <h3>Total Country: {countries.length}</h3>
         <div>
-            <h5>Visited Country List : {} </h5>
-            <ul>
-
-            </ul>
+        <h5>Total Visited Country  : {visitedCountries.length} </h5>
+            <h5>Visited Country List : <ol>
+            {
+                visitedCountries.map(country=><li key={country.cca3}>{country.name.common}</li>  ) 
+                }
+            </ol> </h5>
+           
         </div>
      <div className='country-container'
 > {  
-        countries.map(country=><Country HandleVisitedCountry={HandleVisitedCountry}  key={country.cca3}
+        countries.map(country=><Country handleVisitedCountry={handleVisitedCountry}  key={country.cca3}
         country={country} ></Country>)
        }
        </div>
