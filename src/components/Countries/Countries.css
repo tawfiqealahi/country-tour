@@ -7,5 +7,10 @@ img{
     margin:.8rem;
     width: 40%;
 }
+.flag-container{
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    
+}
 
 

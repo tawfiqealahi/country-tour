@@ -8,6 +8,7 @@ import Country from "../Country/Country";
 const Countries = () => {
     const [countries,setCountries]=useState([]);
     const [visitedCountries,setVisitedCountries]=useState([]);
+    const [visitedCountryFlags,setVisitedCountryFlags]=useState([]);
 
 
 useEffect(()=>{
@@ -18,8 +19,13 @@ useEffect(()=>{
 
 const handleVisitedCountry =country=>{
         const newVisitedCountries =[...visitedCountries,country];
-        setVisitedCountries(newVisitedCountries);
+        setVisitedCountries(newVisitedCountries);             
 }
+const handleVisitedCountryFlags =flag=>{
+    const newVisitedFlags=[...visitedCountryFlags,flag]
+    setVisitedCountryFlags(newVisitedFlags)
+} 
+
     return (
         <div>
         <h3>Total Country: {countries.length}</h3>
@@ -30,11 +36,15 @@ const handleVisitedCountry =country=>{
                 visitedCountries.map(country=><li key={country.cca3}>{country.name.common}</li>  ) 
                 }
             </ol> </h5>
-           
         </div>
+        <div className="flag-container">{
+            visitedCountryFlags.map(flag=><img src={flag} />)
+        }</div>
      <div className='country-container'
 > {  
-        countries.map(country=><Country handleVisitedCountry={handleVisitedCountry}  key={country.cca3}
+        countries.map(country=><Country
+        handleVisitedCountryFlags={handleVisitedCountryFlags}
+         handleVisitedCountry={handleVisitedCountry}  key={country.cca3}
         country={country} ></Country>)
        }
        </div>
